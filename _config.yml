@@ -107,7 +107,7 @@ author:
   name             : "Owen Jeong(Seungwon Jeong)"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
-  location         : "Chicao, IL"
+  location         : "Chicago, IL"
   email            :
   links:
     - label: "Email"
@@ -285,3 +285,6 @@ defaults:
       share: true
       related: true
       show_date: true
+      toc_sticky: true
+      toc_label: Contents
+      #toc_icon: 
