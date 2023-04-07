@@ -1,9 +1,12 @@
 # main links
 main:
-  - title: "Category"
+  - title: "About"
+    url: /about/
+  - title: "Notes"
     url: /categories/
   - title: "Search"
     url: /search/
+  
 
 
 docs:
@@ -25,3 +28,5 @@ docs:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+
