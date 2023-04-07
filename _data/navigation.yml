@@ -5,17 +5,16 @@ main:
   - title: "Search"
     url: /search/
 
-
 docs:
-  - title: "Title1"
+  - title: "Economy"
     children:
-      - title: "Category"
-        url: /categories/
+      - title: "US Economy"
+        url: /_pages/01-economy/
   
-  - title: "Title2"
+  - title: "Programmming"
     children:
-      - title: "Category"
-        url: /categories/
+      - title: "Coding"
+        url: /_pages/02-coding/
   
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
