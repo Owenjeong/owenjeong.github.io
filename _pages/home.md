@@ -13,8 +13,8 @@ header:
 #       url: "http://google.com"
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "Economy, Programming and Thought"
-intro: 
-  - excerpt: 'This is what I have thought, studied.'
+intro:
+  - excerpt: '# This is what I have thought, studied.'
 feature_row:
   - image_path: assets/images/feat1.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
@@ -24,7 +24,7 @@ feature_row:
     url: "/categories/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/feat2.jpg
+  - image_path: /assets/images/feat1.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 2"
     title: "Programming"
@@ -32,10 +32,11 @@ feature_row:
     url: "/categories/coding/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/feat3.jpg
+  - image_path: /assets/images/feat1.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     title: "Others"
     excerpt: "This is my thoughts and other stuffs"
+
 # feature_row2:
 #   - image_path: /assets/images/feat2.jpg
 #     alt: "placeholder image 2"
@@ -66,7 +67,8 @@ feature_row:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
-<!-- 
-{% include feature_row id="feature_row2" type="left" %}
 
+
+<!--
+{% include feature_row id="author_profile" type="left" %} 
 {% include feature_row id="feature_row3" type="right" %} -->

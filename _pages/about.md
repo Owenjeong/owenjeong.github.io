@@ -1,4 +1,5 @@
 ---
+layout: single
 permalink: /about/
 title: "About"
 excerpt: "Welcome to SWJ Note!"
@@ -16,3 +17,9 @@ excerpt: "Welcome to SWJ Note!"
 toc: true
 author_profile: True
 ---
+
+# Hello! Welcome to my blog
+
+This is the note that I have studied and thought so far
+
+I am very excited for this!
