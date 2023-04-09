@@ -106,8 +106,8 @@ analytics:
 author:
   name             : "Owen Jeong  (Seungwon Jeong)"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Chicago, IL"
+  bio              : "Accountant + Economy + Programming"
+  location         : "Chicago, USA"
   email            :
   links:
     - label: "Email"
@@ -224,7 +224,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-  - jekyll-seo-tag
+
 
 # mimic GitHub Pages with --safe
 whitelist:
