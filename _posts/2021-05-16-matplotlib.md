@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Matplotlib Note
+title: Matplotlib Note(Python)
 categories: Coding
 toc: true
 toc_sticky: true

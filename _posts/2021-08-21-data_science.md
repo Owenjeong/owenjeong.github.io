@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Data Science/Machine Learning Training 
+title: Data Science/Machine Learning Training(Python)
 categories: Coding
 toc: true
 toc_sticky: true

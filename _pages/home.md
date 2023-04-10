@@ -24,18 +24,21 @@ feature_row:
     url: "/categories/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/feat1.jpg
+  - image_path: /assets/images/feat2.2.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 2"
     title: "Programming"
     excerpt: "This is the **Programming/coding note** and my thoughts will be written."
-    url: "/categories/coding/"
+    url: "/categories/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/feat1.jpg
+  - image_path: /assets/images/feat3.1.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     title: "Others"
     excerpt: "This is my thoughts and other stuffs"
+    url: "/categories/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
 
 # feature_row2:
 #   - image_path: /assets/images/feat2.jpg

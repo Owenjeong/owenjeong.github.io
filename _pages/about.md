@@ -18,7 +18,7 @@ toc: true
 author_profile: True
 ---
 
-# Hello! Welcome to my blog
+## Hello! Welcome to my note
 
 This is the note that I have studied and thought so far
 
