@@ -14,12 +14,32 @@ excerpt: "Welcome to SWJ Note!"
 #     image_path: /assets/images/mm-layout-archive.png
 #     alt: "archive layout example"
 # last_modified_at: 2022-05-27T11:59:26-04:00
-toc: true
+# toc: true
 author_profile: True
 ---
 
 ## Hello! Welcome to my note
 
-This is the note that I have studied and thought so far
+Hi, this is Owen Jeong (Seungwon Jeong), who is an accountant and programmer. 
 
-I am very excited for this!
+I have been trying to figure out how to merge finance and programming which is Fintech.
+
+## Skills
+* Python
+* VBA
+* SQL(PostgreSQL)
+* Excel
+
+## Experiences
+### Accounting
+* Quarterly, Year-end tax filings
+* Financial reports for executives
+* Monthly, Quaterly and Yearly audit with CFO
+* 
+
+### IT
+* IT support/admin for customers
+* Setting up networks/PCs
+* Data analytics using programming languages
+* Creating automations for workloads
+
