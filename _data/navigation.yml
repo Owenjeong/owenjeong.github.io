@@ -4,11 +4,13 @@ main:
     url: /about/
   - title: "Notes"
     url: /categories/
+  - title: "Labs"
+    url: /labs/
   - title: "Search"
     url: /search/
   - title: "Terms"
     url: /terms/
-  
+
 
 docs:
   - title: "Economy"

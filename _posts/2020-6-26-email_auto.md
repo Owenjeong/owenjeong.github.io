@@ -2,11 +2,19 @@
 layout: single
 title: Email Automation(VBA)
 categories: Coding
-toc: true
+toc: false
 toc_sticky: true
 toc_label: Contents
 author_profile: false
 ---
+
+Did you get tired of sending a same email to a bunch of people? 
+
+Here is the key that you might be able to put less efforts to do it.
+
+If you are sales man or payroll person or any of you who is related to this will be happy with it.
+
+
 
 ```vb
 Option Explicit
