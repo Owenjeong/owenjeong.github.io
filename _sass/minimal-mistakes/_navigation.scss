@@ -589,15 +589,17 @@
   }
 
 #navbarResponsive li ul{
-  background: rgb(109,109,109);
+  background: rgb(255, 255, 255);
   display:none;
   height:auto;
   padding:0px;
   margin:0px;
   border:0px;
   position:absolute;
-  width:200px;
-  z-index:200;
+  width:100px;
+  z-index:100;
+  // border-left:1px solid #d1d1d1;
+  // border-right:1px solid #d1d1d1;
   /*top:1em;
   /*left:0;*/
   }
@@ -611,7 +613,9 @@
   float:none;
   margin:0px;
   padding:0px;
-  width:200px;
+  width:100px;
+  border-top:1px solid #d1d1d1;
+  border-bottom:1px solid #d1d1d1;
   }
 
 #navbarResponsive li:hover li a{
@@ -621,7 +625,8 @@
   #navbarResponsive li ul a{
     display:block;
     height:50px;
-    font-size:12px;
+    font-weight: bold;
+    font-size:15px;
     font-style:normal;
     margin:0px;
     padding:0px 10px 0px 20px;
@@ -634,3 +639,4 @@
     color:#ffffff;
     text-decoration:none;
     }
+  
