@@ -575,7 +575,7 @@
 #site-category li a{
   display:block;
   font-weight:normal;
-  line-height:50px;
+  line-height:45px;
   margin: 0px;
   padding:0px 25px;
   text-align:center;
@@ -583,8 +583,8 @@
   }
 
 #site-category a:hover{
-  background: rgb(71,71,71);
-  color:#FFFFFF;
+  background: rgb(255, 255, 255);
+  color:#adadad;
   text-decoration:none;
   }
 
@@ -596,8 +596,8 @@
   margin:0px;
   border:0px;
   position:absolute;
-  width:100px;
-  z-index:100;
+  width:120px;
+  z-index:120;
   // border-left:1px solid #d1d1d1;
   // border-right:1px solid #d1d1d1;
   /*top:1em;
@@ -613,7 +613,7 @@
   float:none;
   margin:0px;
   padding:0px;
-  width:100px;
+  width:120px;
   border-top:1px solid #d1d1d1;
   border-bottom:1px solid #d1d1d1;
   }
@@ -624,7 +624,7 @@
 
   #navbarResponsive li ul a{
     display:block;
-    height:50px;
+    height:45px;
     font-weight: bold;
     font-size:15px;
     font-style:normal;
