@@ -6,12 +6,15 @@ main:
     url: /categories/
   - title: "Labs"
     url: /labs/
+    sublinks:
+      - title: "Lab1"
+        url: "/lab1/"
+      - title: "Lab2"
+        url: "/lab2/"  
   - title: "Search"
     url: /search/
   - title: "Terms"
     url: /terms/
-
-
 docs:
   - title: "Economy"
     children:

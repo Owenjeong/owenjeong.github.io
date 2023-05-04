@@ -22,24 +22,34 @@ author_profile: True
 
 Hi, this is Owen Jeong (Seungwon Jeong), who is an accountant and programmer. 
 
-I have been trying to figure out how to merge finance and programming which is Fintech.
+I have been trying to figure out how to merge finance and programming.
 
 ## Skills
 * Python
 * VBA
-* SQL(PostgreSQL)
-* Excel
+* SQL
+* HTML/CSS
+* Excel 
+* Quickbooks(Desktop, Online)
+* PowerBi/Tableau
+* Financial analysis
+* Tax planning and compliance
+
 
 ## Experiences
 ### Accounting
-* Quarterly, Year-end tax filings
-* Financial reports for executives
-* Monthly, Quaterly and Yearly audit with CFO
-* 
+* Quarter, Year-end tax abofilings
+* Monthly, Quaterly and Yearly audit
+* Preparing and analyzing financial statements
+* Conducting internal audits and ensuring compliance with regulations
+
 
 ### IT
 * IT support/admin for customers
+* Managing software and hardware upgrades
+* Managing cloud-based services and applications
+* Providing technical support and training to staffs
 * Setting up networks/PCs
 * Data analytics using programming languages
 * Creating automations for workloads
-
+* Managing companies' domains and registries

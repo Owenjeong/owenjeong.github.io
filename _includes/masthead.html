@@ -11,13 +11,13 @@
           {{ site.masthead_title | default: site.title }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
-        <ul class="visible-links">
+        <!-- <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             <li class="masthead__menu-item">
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
-        </ul>
+        </ul> -->
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
@@ -28,7 +28,30 @@
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
         </button>
-        <ul class="hidden-links hidden"></ul>
+        <!-- <ul class=""></ul> -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="visible-links">
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categories">Notes</a>
+            </li>
+            <li class="nav-item" id="site-category">
+              <a class="nav-link" href="/labs">Labs</a>
+              <ul>
+                <li><a href="/labs/lab1">Lab1</a></li>
+                <li><a href="/labs/lab2">Lab2</a></li>
+            </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/terms">Terms</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   </div>
