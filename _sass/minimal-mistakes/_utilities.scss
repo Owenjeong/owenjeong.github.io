@@ -389,11 +389,12 @@ body:hover .visually-hidden button {
   &:before {
     @supports (pointer-events: none) {
       content: '';
-      position: fixed;
+      position: abosolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      // adding padding, cursor, outline
       opacity: 0;
       background-color: $background-color;
       -webkit-transition: $global-transition;
@@ -412,6 +413,7 @@ body:hover .visually-hidden button {
   }
 }
 
+
 .greedy-nav__toggle:hover {
   .navicon,
   .navicon:before,
@@ -425,6 +427,8 @@ body:hover .visually-hidden button {
     }
   }
 }
+
+
 
 /*
    Sticky, fixed to top content
