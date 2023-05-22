@@ -571,3 +571,73 @@
     padding-left: 3.25rem
   }
 }
+
+
+#site-category li a{
+  display:block;
+  font-weight:normal;
+  line-height:45px;
+  margin: 0px;
+  padding:0px 25px;
+  text-align:center;
+  text-decoration:none;
+  }
+
+#site-category a:hover{
+  background: rgb(255, 255, 255);
+  color:#adadad;
+  text-decoration:none;
+  }
+
+#navbarResponsive li ul{
+  background: rgb(255, 255, 255);
+  display:none;
+  height:auto;
+  padding:0px;
+  margin:0px;
+  border:0px;
+  position:absolute;
+  width:120px;
+  z-index:120;
+  // border-left:1px solid #d1d1d1;
+  // border-right:1px solid #d1d1d1;
+  /*top:1em;
+  /*left:0;*/
+  }
+
+#navbarResponsive li:hover ul{
+  display:block;
+  }
+
+#navbarResponsive li li {
+  display:block;
+  float:none;
+  margin:0px;
+  padding:0px;
+  width:120px;
+  border-top:1px solid #d1d1d1;
+  border-bottom:1px solid #d1d1d1;
+  }
+
+#navbarResponsive li:hover li a{
+  background:none;
+  }
+
+  #navbarResponsive li ul a{
+    display:block;
+    height:45px;
+    font-weight: bold;
+    font-size:15px;
+    font-style:normal;
+    margin:0px;
+    padding:0px 10px 0px 20px;
+    text-align:left;
+    }
+
+  #navbarResponsive li ul a:hover{
+    background: rgb(71,71,71);
+    border:0px;
+    color:#ffffff;
+    text-decoration:none;
+    }
+  
