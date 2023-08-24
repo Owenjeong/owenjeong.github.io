@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "SWJ Note"
 title_separator          : "|"
 subtitle                 : "Change is inevitable, Growth is optional."
-name                     : "Owen Jeong(Seungwon Jeong)"
+name                     : "Owen Jeong  (Seungwon Jeong)"
 description              : "An amazing website."
 url                      : "https://owenjeong.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Owen Jeong(Seungwon Jeong)"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Accountant + Programming"
+  bio              : "Analyst + Programming"
   location         : "Chicago, IL USA"
   email            :
   links:

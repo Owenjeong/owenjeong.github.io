@@ -20,7 +20,7 @@ author_profile: True
 
 ## Hello! Welcome to my note
 
-Hi, this is Owen Jeong (Seungwon Jeong), who is an accountant and programmer. 
+Hi, this is Owen Jeong (Seungwon Jeong), who is a financial analyst and programmer. 
 
 I have been trying to figure out how to merge finance and programming.
 
@@ -37,7 +37,8 @@ I have been trying to figure out how to merge finance and programming.
 
 
 ## Experiences
-### Accounting
+### Finance
+* Financial modeling
 * Quarter, Year-end tax abofilings
 * Monthly, Quaterly and Yearly audit
 * Preparing and analyzing financial statements
