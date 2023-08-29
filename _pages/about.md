@@ -20,37 +20,39 @@ author_profile: True
 
 ## Hello! Welcome to my note
 
-Hi, this is Owen Jeong (Seungwon Jeong), who is a financial analyst and programmer. 
+Greeting! I am Owen Jeong(Seungwon Jeong), a professional specializing in the field of financial analysis and programming. My focus is on exploring innovative ways to amalgamate the domains of finance and programming.
 
-I have been trying to figure out how to merge finance and programming.
 
 ## Skills
+I bring to the table a diverse set of skills including but not limited to:
 * Python
-* VBA
-* SQL
-* HTML/CSS
-* Excel 
-* Quickbooks(Desktop, Online)
-* PowerBi/Tableau
-* Financial analysis
+* Visual Basic for Applications(VBA)
+* SQL Database Management
+* HTML/CSS Web Development
+* Microsoft Excel Proficiency 
+* Quickbooks(Desktop, Online) Expertise
+* PowerBi/Tableau for Data Visualization
+* Financial analysis Techniques
 * Tax planning and compliance
 
 
 ## Experiences
 ### Finance
-* Financial modeling
-* Quarter, Year-end tax abofilings
-* Monthly, Quaterly and Yearly audit
-* Preparing and analyzing financial statements
-* Conducting internal audits and ensuring compliance with regulations
+In my financial roles, I have developed proficiency in:
+* Utilizing Excel, Python and SQL for complex data analysis and financial modeling
+* Applying Tableau and PowerBI for insightful data visualization and financial reporting
+* Preparing and Analyzing of Financial Statements
+* Overseeing Budget Forecasting and Performance Variance Analysis
+* Implementing Cost Reduction strategies to Optimize Financial Resources
+
 
 
 ### IT
-* IT support/admin for customers
-* Managing software and hardware upgrades
-* Managing cloud-based services and applications
-* Providing technical support and training to staffs
-* Setting up networks/PCs
-* Data analytics using programming languages
-* Creating automations for workloads
-* Managing companies' domains and registries
+* Providing IT support/administration for clients
+* Managing software/hardware upgrades
+* Overseeing cloud-based services/applications
+* Delivering technical support/training to staffs members
+* Setting up networks/personal computers
+* Leveraging programming languages for data analytics
+* Creating automations to streamline workloads
+* Administering companies' domains/registries
