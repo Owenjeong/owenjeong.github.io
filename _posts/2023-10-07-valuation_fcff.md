@@ -1,9 +1,15 @@
+---
+layout: single
+title:  "DCF Valuation (AAPL)"
+categories: Analysis
+toc: true
+toc_sticky: true
+toc_label: Contents
+author_profile: false
+---
+
 # Stock Valuation using Free Cash Flow to the Firm with Python
 
-**Hugh Donnelly, CFA**<br> 
-*AlphaWave Data*
-
-**November 2020**
 
 For this analysis, we use several Python-based scientific computing technologies along with the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) and the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints).  Jupyter Notebooks detailing this analysis are also available on [Google Colab](https://colab.research.google.com/drive/1BWmRIDtZGRndLk8lLGgpoURaAzHC8_jg?usp=sharing) and [Github](https://github.com/AlphaWaveData/Jupyter-Notebooks/blob/master/AlphaWave%20Stock%20Valuation%20using%20Free%20Cash%20Flow%20to%20the%20Firm%20example.ipynb).
 
@@ -48,12 +54,15 @@ When building a FCFF valuation model, one can typically choose between a single-
 
 A general expression for the two-stage FCFF valuation model is:
 
-$$Firm\ Value = \sum_{t=1}^n\overbrace{\frac{FCFF_t}{(1 + WACC)^t}}^{Stage\ 1}+\overbrace{\frac{FCFF_{n+1}}{(WACC - g)}*\frac{1}{(1 + WACC)^n}}^{Stage\ 2}$$<br>
+$$
+Firm\ Value = \sum_{t=1}^n\frac{FCFF_t}{(1 + WACC)^t}+\frac{FCFF_{n+1}}{(WACC - g)}*\frac{1}{(1 + WACC)^n}
+$$
 
-$FCFF_t = expected\ free\ cash\ flow\ to\ the\ firm\ in\ year\ t$<br>
-$FCFF_{n+1} = expected\ free\ cash\ flow\ to\ the\ firm\ in\ the\ last\ year\ (Year\ 6\ in\ this\ example)$<br>
-$g = constant\ expected\ growth\ rate\ in\ FCFF$<br>
-$WACC = weighted\ average\ cost\ of\ capital$<br>
+$$Where :$$
+- $$FCFF_t$$ = expected free cash flow to the firm in year $$t$$
+- $$FCFF_{n+1}$$ = expected free cash flow to the firm in the last year (Year 6 in this example)
+- $$g$$ = constant expected growth rate in $$FCFF$$
+- $$WACC$$ = weighted average cost of capital
 
 One common two-stage model assumes a constant growth rate in each stage, and a second common model assumes declining growth in Stage 1 followed by a long-run sustainable growth rate in Stage 2.  In our model, we assume a constant growth rate in each stage.
 
@@ -72,8 +81,8 @@ url = "https://financial-statements.p.rapidapi.com/api/v1/resources/cash-flow"
 querystring = {"ticker":company_ticker}
 
 headers = {
-	"X-RapidAPI-Key": "acc452e6bamshe911abf8e81f8a8p1a5578jsn80a5ba5a41c2",
-	"X-RapidAPI-Host": "financial-statements.p.rapidapi.com"
+	"X-RapidAPI-Key": "API_Key",
+	"X-RapidAPI-Host": "API_Key"
 }
 
 cf_response = requests.get(url, headers=headers, params=querystring)
@@ -197,8 +206,8 @@ url = "https://financial-statements.p.rapidapi.com/api/v1/resources/income-state
 querystring = {"ticker":company_ticker}
 
 headers = {
-	"X-RapidAPI-Key": "acc452e6bamshe911abf8e81f8a8p1a5578jsn80a5ba5a41c2",
-	"X-RapidAPI-Host": "financial-statements.p.rapidapi.com"
+	"X-RapidAPI-Key": "API_Key",
+	"X-RapidAPI-Host": "API_Key"
 }
 
 income_statement_response = requests.get(url, headers=headers, params=querystring)
@@ -412,7 +421,17 @@ income_statement_df
 
 Using the Cash Flow Statement and Income Statement, we calculate FCFF as:
 
-$$FCFF = Free\ Cash\ Flow\ +\ Interest\ Expense*(1\ -\ Effective\ Tax\ Rate)$$
+* $$FCFF = Free\ Cash\ Flow\ +\ Interest\ Expense*(1\ -\ Effective\ Tax\ Rate)$$
+
+* $$FCFF = EBITDA*(1\ −\ TR)\ +\ DA*TR\ +\ WC\ −\ CE$$
+
+$$Where:$$\
+$$EBITDA$$ = Earnings, before interest, taxes, and depreciation\
+$$TR$$ = Tax rate\
+$$DA$$ = Depreciation & amortization\
+$$WC$$ = Changes in working capital\
+$$CE$$ = Capital Expenditures
+​
 
 With this understanding, we are able to store the historical FCFF in a dataframe when running the code below.  
 
@@ -571,12 +590,14 @@ The Weighted Average Cost of Capital (WACC) is the weighted average of the rates
 
 WACC = (equity-to-capital ratio * required return on equity) + (debt-to-capital ratio * after-tax required return on debt)
 
-$$WACC = \frac{E}{E+D}r_e\ +\ \frac{D}{E+D}r_d(1\ -\ tax\ rate)$$<br>
-$E = market\ value\ of\ equity$<br>
-$D = market\ value\ of\ debt$<br>
-$r_e = required\ return\ on\ equity$<br>
-$r_d = required\ return\ on\ debt$<br>
-$tax\ rate = effective\ tax\ rate$<br>
+$$WACC = \frac{E}{E+D}*r_e\ +\ \frac{D}{E+D}*r_d*(1\ -\ tax\ rate)$$
+
+$$Where:$$\
+$$E$$ = market value of equity\
+$$D$$ = market value of debt\
+$$r_e$$ = required return on equity\
+$$r_d$$ = required return on debt\
+$$tax\ rate$$ = effective tax rate
 
 Adding the [Balance Sheet Statement](https://rapidapi.com/alphawave/api/financial-statements?endpoint=apiendpoint_df251606-fb96-4468-9067-0d65886ce5b9) endpoint from the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) and the [Key Statistics](https://rapidapi.com/alphawave/api/stock-analysis?endpoint=apiendpoint_dff4b882-4be4-4169-a700-04275c92bdce) endpoint from the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints), we can pull in the remaining data required to calculate WACC.
 
@@ -589,8 +610,8 @@ url = "https://financial-statements.p.rapidapi.com/api/v1/resources/balance-shee
 querystring = {"ticker":company_ticker}
 
 headers = {
-	"X-RapidAPI-Key": "acc452e6bamshe911abf8e81f8a8p1a5578jsn80a5ba5a41c2",
-	"X-RapidAPI-Host": "financial-statements.p.rapidapi.com"
+	"X-RapidAPI-Key": "API_Key",
+	"X-RapidAPI-Host": "API_Key"
 }
 
 balance_sheet_response = requests.get(url, headers=headers, params=querystring)
@@ -721,8 +742,8 @@ url = "https://stock-analysis.p.rapidapi.com/api/v1/resources/key-stats"
 querystring = {"ticker":company_ticker}
 
 headers = {
-	"X-RapidAPI-Key": "acc452e6bamshe911abf8e81f8a8p1a5578jsn80a5ba5a41c2",
-	"X-RapidAPI-Host": "stock-analysis.p.rapidapi.com"
+	"X-RapidAPI-Key": "API_Key",
+	"X-RapidAPI-Host": "API_Key"
 }
 
 key_stats_response = requests.get(url, headers=headers, params=querystring)
@@ -1009,11 +1030,13 @@ key_stats_df
 **2a. Estimating the Required Return on Equity**<br>
 In order to calculate the Required Return on Equity, we will use the Capital Asset Pricing Model (CAPM) which is an equilibrium model that takes the risk-free rate, the stock's equity beta, and the market risk premium as inputs.
 
-$$r_e = r_f\ +(\beta*MRP)$$<br>
-$r_e = required\ return\ on\ equity$<br>
-$r_f = risk-free\ rate$<br>
-$\beta = beta$<br>
-$MRP = market\ risk\ premium$<br>
+$$r_e = r_f\ +(\beta*MRP)$$
+
+$$Where:$$\
+$$r_e$$ = required return on equity\
+$$r_f$$ = risk-free rate\
+$$Beta$$ = beta\
+$$MRP$$ = market risk premium
 
 *Estimating the Risk-Free Rate*<br>
 Government securities are assumed to be risk-free, at least from a credit standpoint.  With this assumption, the appropriate rate to use in the CAPM is the government security having approximately the same duration as the asset being valued and sufficient liquidity so that the yield does not have an embedded liquidity risk premium.  Equities are assumed to have a long duration, so a long-term government bond yield is an appropriate proxy for the risk-free rate.
@@ -1069,8 +1092,16 @@ The market risk premium should be the expected return on the market index less t
 ```python
 # Market Risk Premium
 #Market Risk Premium = Return of market(5% most likely) - Free risk rate
-market_risk_premium = (0.05-)
+market_risk_premium = (0.05-risk_free_rate)
+market_risk_premium
 ```
+
+
+
+
+    0.0021600008010864286
+
+
 
 Using the CAPM, we can now calculate the required return on equity for the company.
 
@@ -1078,14 +1109,14 @@ Using the CAPM, we can now calculate the required return on equity for the compa
 ```python
 # Required Cost of Equity
 
-equity_return = risk_free_rate + (equity_beta*market_risk_premium)
-equity_return
+coe = risk_free_rate + (equity_beta*market_risk_premium)
+coe
 ```
 
 
 
 
-    0.0795350000667572
+    0.0506696002483368
 
 
 
@@ -1112,15 +1143,15 @@ total_debt_df = total_debt.to_frame().transpose()
 total_debt_str = total_debt_df.values[0][-1:]
 total_debt_int = int(total_debt_str)
 
-# Required Return on Debt
-debt_return = interest_expense_int / total_debt_int
-debt_return
+# Required Cost of Debt
+cod = interest_expense_int / total_debt_int
+cod
 ```
 
 
 
 
-    0.025552314205414636
+    0.024410963695874872
 
 
 
@@ -1136,7 +1167,7 @@ avg_effective_tax_rate
 
 
 
-    0.18317664597985506
+    0.14644962419997865
 
 
 
@@ -1148,7 +1179,7 @@ To calculate the market value of equity for a firm, we can use the [AlphaWave Da
 
 ```python
 # Market Value of Equity
-market_cap_str = key_stats_df.loc[r'Market cap (intra-day) '][0]
+market_cap_str = key_stats_df.loc[r'Market cap (intra-day)'][0]
 
 market_cap_lst = market_cap_str.split('.')
 if market_cap_str[len(market_cap_str)-1] == 'T':
@@ -1166,7 +1197,7 @@ market_cap_int
 
 
 
-    2030000000
+    2770000000
 
 
 
@@ -1185,7 +1216,7 @@ net_debt_int
 
 
 
-    74420000
+    96423000
 
 
 
@@ -1193,15 +1224,26 @@ The company value is the sum of its equity and debt market values.
 
 
 ```python
-# Company Value
-company_value = market_cap_int + net_debt_int
-company_value
+# Enterprise Value
+last_cf = cash_flow_df.loc['Free Cash Flow']
+last_cf_df = last_cf.to_frame().transpose()
+last_cf_str = last_cf_df.values[0][-1]
+last_cf_int = int(last_cf_str)
+
+last_equity = balance_sheet_df.loc['Total Equity Gross Minority Interest']
+last_equity_df = last_equity.to_frame().transpose()
+last_equity_str = last_equity_df.values[0][-1]
+last_equity_int = int(last_equity_str)
+
+
+enterprise_value = market_cap_int + net_debt_int - last_cf_int
+enterprise_value
 ```
 
 
 
 
-    2104420000
+    2754980000
 
 
 
@@ -1211,28 +1253,29 @@ With all the components acquired, we can calculate the firm's WACC.
 
 
 ```python
-WACC = ((market_cap_int/company_value) * equity_return) \
-        + ((net_debt_int/company_value) * (debt_return * (1-avg_effective_tax_rate)))
+WACC = ((last_equity_int/(last_equity_int + net_debt_int)) * coe) \
+        + ((net_debt_int/(last_equity_int + net_debt_int)) * (cod * (1-avg_effective_tax_rate)))
 WACC
 ```
 
 
 
 
-    0.07746045183864433
+    0.031113215140318208
 
 
 
-### 3. Stock Valuation
+### 3. Valuation
 
 We need to discount all the forecasted cash flows to get the Firm Value. First, discount the forecasted FCFF for each of the next five years (Stage 1). Then, the present value of the terminal value of the firm using the forecasted FCFF in Year 6 is added to this amount (Stage 2).
 
-$$Firm\ Value = \sum_{t=1}^n\overbrace{\frac{FCFF_t}{(1 + WACC)^t}}^{Stage\ 1}+\overbrace{\frac{FCFF_{n+1}}{(WACC - g)}*\frac{1}{(1 + WACC)^n}}^{Stage\ 2}$$<br>
+$$Firm\ Value = \sum_{t=1}^n \frac{FCFF_t}{(1 + WACC)^t}+ \frac{FCFF_{n+1}}{(WACC - g)}* \frac{1}{(1 + WACC)^n}$$
 
-$FCFF_t = expected\ free\ cash\ flow\ to\ the\ firm\ in\ year\ t$<br>
-$FCFF_{n+1} = expected\ free\ cash\ flow\ to\ the\ firm\ in\ the\ last\ year\ (Year\ 6\ in\ this\ example)$<br>
-$g = constant\ expected\ growth\ rate\ in\ FCFF$<br>
-$WACC = weighted\ average\ cost\ of\ capital$<br>
+$$Where:$$\
+$$FCFF_t$$ = expected free cash flow to the firm in year $$t$$\
+$$FCFF_{n+1}$$ = expected free cash flow to the firm in the last year (Year 6 in this example)\
+$$g$$ = constant expected growth rate in $$FCFF$$\
+$$WACC$$ = weighted average cost of capital
 
 As the resulting value gives us the Firm Value of the company (which is the value to both equity and debt holders), we need to deduct the company’s Market Value of Debt to arrive at the Equity Value of the firm.
 
@@ -1245,17 +1288,17 @@ discounted_FCFF_lst = []
 for year in range(0,5):
     discounted_FCFF = forecast_free_cash_flow_firm_df.iloc[0,year]/(1+WACC)**(year+1)
     discounted_FCFF_lst.append(int(discounted_FCFF))
-terminal_value = forecast_free_cash_flow_firm_df.iloc[0,5]/(WACC-long_term_growth)
-PV_terminal_value = int(terminal_value/(1+WACC)**5)
-enterprise_value = sum(discounted_FCFF_lst)+PV_terminal_value
-equity_value = enterprise_value-net_debt_int
+terminal_value = (forecast_free_cash_flow_firm_df.iloc[0,5]*(1+long_term_growth))/(WACC-long_term_growth)
+PV_terminal_value = int(terminal_value/(1+WACC)**6)
+firm_value = sum(discounted_FCFF_lst)+PV_terminal_value
+equity_value = (firm_value - net_debt_int + last_cf_int)/100
 equity_value
 ```
 
 
 
 
-    1953329634
+    3407764791.1
 
 
 
@@ -1282,7 +1325,7 @@ shares_outstanding_int
 
 
 
-    17100000
+    15630000
 
 
 
@@ -1299,17 +1342,13 @@ actual_stock_price = '${:,.2f}'.format(actual_stock_price)
 print("Actual Stock Price = %s"%(actual_stock_price))
 ```
 
-    Model Stock Price = $114.23
-    Actual Stock Price = $118.71
+    Model Stock Price = $218.03
+    Actual Stock Price = $177.22
     
 
 ### 4. Conclusion
 
-As can be seen in this article, we were able to calculate Stock Valuation using FCFF and WACC.  In the example above, the two-stage FCFF valuation model does a reasonably good job at estimating the fair value of a company's stock price.  However, the model is very sensitive to the discount and growth rates selected.  When applying this model, it is important to consider the type of growth the company is currently experiencing along with the anticipated growth characteristics for the future. A single-stage FCFF valuation model is useful for stable firms in mature industries while two-stage and three-stage FCFF valuation models are useful when you want to model multiple phases of growth.
+As can be seen in this article, we were able to calculate Stock Valuation using FCFF and WACC.  In the example above, the two-stage FCFF valuation model does a reasonably good job at estimating the fair value of a company's stock price.  
+However, the model is very sensitive to the discount and growth rates selected.  When applying this model, it is important to consider the type of growth the company is currently experiencing along with the anticipated growth characteristics for the future.  
+A single-stage FCFF valuation model is useful for stable firms in mature industries while two-stage and three-stage FCFF valuation models are useful when you want to model multiple phases of growth.
 
-If you liked this article, you may also enjoy AlphaWave Data's [Bayesian Pairs Trading using Corporate Supply Chain Data](https://medium.com/@hdonnelly6/bayesian-pairs-trading-using-corporate-supply-chain-data-8b96305686d) article.  Using the [AlphaWave Data Corporate Supply Chain API](https://rapidapi.com/alphawave/api/corporate-supply-chain/endpoints), we can get a list of suppliers and customers for a given stock symbol.  You can further filter this list of suppliers and customers using the two-stage FCFF valuation model discussed in this article to get a grouping of good pairs trading candidates that are potentially misvalued.  A list of company tickers that have supply chain data is included at the bottom of the Jupyter Notebooks available on [Google Colab](https://colab.research.google.com/drive/1e_SiiZn7WEW3OUNG-ftN3riPNjiz0M0C?usp=sharing) and [Github](https://github.com/AlphaWaveData/Jupyter-Notebooks/blob/master/AlphaWave%20Corporate%20Supply%20Chain%20API%20Example.ipynb), which could be a good list of tickers to run through the two-stage FCFF valuation model discussed above.
-
-
-```python
-
-```
