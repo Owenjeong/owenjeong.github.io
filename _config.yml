@@ -104,9 +104,8 @@ analytics:
 
 # Site Author
 author:
-  name             : | 
-                    Owen Jeong
-                    (Seungwon Jeong)
+  name             : "Owen Jeong"
+  name             : "(Seungwon Jeong)"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Analyst + Programming"
   location         : "Chicago, IL USA"
