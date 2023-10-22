@@ -14,13 +14,13 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "Economy, Programming and Thought"
 intro:
-  - excerpt: '# This is what I have thought, studied.'
+  - excerpt: '# Reflections and Research: A Deep Dive into My Studies and Thoughts'
 feature_row:
   - image_path: assets/images/feat1.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 1"
     title: "Economy"
-    excerpt: "This is the **US Economy note** and my thoughts"
+    excerpt: "Decoding the **Economy**: An Insightful Exploration of Facts and Personal Perspectives"
     url: "/categories/"
     btn_label: "Read More"
     btn_class: "btn--primary"
@@ -28,14 +28,14 @@ feature_row:
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 2"
     title: "Programming"
-    excerpt: "This is the **Programming/coding note** and my thoughts will be written."
+    excerpt: "Deciphering Code: My Observations and Insights on **Programming**"
     url: "/categories/"
     btn_label: "Read More"
     btn_class: "btn--primary"
   - image_path: /assets/images/feat3.1.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     title: "Others"
-    excerpt: "This is my thoughts and other stuffs"
+    excerpt: "Musings and More: A Collection of My Thoughts and Experiences"
     url: "/categories/"
     btn_label: "Read More"
     btn_class: "btn--primary"
