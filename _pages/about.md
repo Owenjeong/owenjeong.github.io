@@ -33,7 +33,7 @@ I bring to the table a diverse set of skills including but not limited to:
 * Quickbooks(Desktop, Online) Expertise
 * PowerBi/Tableau for Data Visualization
 * Financial analysis Techniques
-* Tax planning and compliance
+
 
 
 ## Experiences
