@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Digital Addicts
+title: The Digital Drugs -- Understanding Our Dopamine-Driven Dependence on Screen Time
 categories: Thoughts
 toc: 
 toc_sticky: true
@@ -11,50 +11,27 @@ author_profile: false
 
 ![image]({{site.url}}/assets/images/hannahberner.png)
 
+Source of Image: Hannah Berner from Twitter
 
+In the digital age, our screens have become the most potent dealers of dopamine, the brain's "reward" neurotransmitter. The mechanisms that once ensured our survival are now being exploited by apps and platforms to keep us scrolling, watching and clicking.
 
-The most effective ways to get people high on dopamine are alive and well on public monitors.
-The most effective ways to addict humans have survived and are now on our screens.
+Platforms like Netflix, Youtube, TikTok and others have mastered the art of serving us bite-sized content that delivers quick hits of dopamine.
+They utilize A/B testing -- showing some users screen A and others screen B -- to determine which version keeps users engaged longer. If version B proves more engaging, version A is discareded in favor of the more addictive option.
 
-Netflix, YouTube videos, TikTok, short, stimulating drugs and A/B testing endlessly
-Showing some people screen A and others screen B.
-If B has a higher dwell time and people are choosing B more, you ditch A and go into the B pipeline.
+Teams of psychologists, engineers and marketing strategists collaborate to devise strategies aimed at keeping us within their apps for as long as possible. Their goal? To ensure we see their ads or consume more content. It's akin to food companies concocting irresistibly addictive junk food flavors -- only in this case; it's digital content.
 
-We're constantly creating different strategies and competing against each other to figure out how to get people to stay in the app longer and see our ads.
-This R&D is done by psychologists, engineers, and marketing strategists working together, so the average person who's addicted can't get away with it.
-Rather than a food company mixing flavors together to create a delicious and very addictive food that the average person can't resist, it's a processed food.
+The videos on these platforms can be likened to synthetic drugs designed for a faster dopamine rush. Our brains are hardwired to release reward hormones when stimulated by novelty or exploration -- a mechanism that served our ancestors well when venturing into unkown territorries was crucial for survival.
 
-These videos on YouTube, Netflix, etc. are more like synthetic drugs that can produce a faster dopamine rush.
-Our bodies have an intrinsic opiate link, and when we are stimulated by new things, we release reward hormones.
-In the past, exploration, adventure, and going into unknown territory were dopamine stimuli for people.
-but in modern society, we've taken these stimuli to extremes.  
+However, in today's world where curiosity can be satisfied with a click or swipe on a thumbnail image; we're taken these stimuli to unprecedented extremes. The uncertainty and intrigue surrounding what comes next act as powerful catalysts for dopamine release.
 
-Uncertainty Curiosity about the unknown 
-When you see a thumbnail, you can't help but click on it, not knowing what you're going to see next.
-The dopamine rush of uncertainty. 
-If you look at people who have taken fentanyl, they're so addicted to it that they can't get off of it.
-In Philadelphia, there's a street called Kensington, where drug addicts walk around like zombies. 
-Many fentanyl addicts roam the streets unable to control themselves. 
+This dynamic is strikingly similar to addition patterns observed with synthetic drugs like fentanyl. In places like Kensington Street in Philadelphia -- Known infamously as "Zombieland" due to its high population of drug addtics -- individuals addicted to such substances often find themselves unable to break free from their dependence.
 
-Fentanyl addicts' dopamine systems are completely destroyed and it takes decades to recover.
-That's because once a synthetic drug causes an overwhelming stimulus, humans and animals gradually reduce the amount of stimulation
-to protect their brains, so the remaining natural stimuli become much less rewarding. 
-Sometimes so much so that we don't even feel it.
+The constant bombardment from these 'digital drugs' causes out brains' reward systems gradually become desensitized over time -- normal stimuli lose their appeal while life without these digital stimulants may seem dull or even unbearable.
 
-So when you're addicted to drugs or alcohol, normal everyday life feels like black and white and you don't feel anything.
-If you are constantly exposed to YouTube videos, Netflix, Shorts, TikTok, etc.
-You become a person who has difficulty focusing on normal stimuli, and you become nervous about everyday stimuli with low rewards.
-In digital drug videos, time passes quickly, from tens of seconds to just a few minutes. 
-The natural passage of time in everyday life is slowed down. As a result, the person becomes bored with routine and loses the sense of spontaneity in ordinary things.
+As a result, individuals who are habitually exposed to fast-paced digital content often struggle with focusing on everyday tasks that offer less immediate gradification. Moreover, they may find longer pieces of content too demanding on their shortened attention spans -- leading them towards an endless cycle of short videos or stories instead.
 
-Moreover, the shorter the happiness of those addicted to digital drugs, the harder it is for them to finish a long video or movie on YouTube, so they skip it or watch other videos along the way.
-This is mostly seen in TikTok addicts, Short Story addicts, and people who have become severely addicted. 
-It's an addiction that's so powerful that even the most extreme of human beings can't get off of it once they've taken a shot of fentanyl. 
-If you're already addicted to digital drugs, you can't wean yourself off of them gradually, you have to wean yourself off of them once and for all. 
+Bearking free from this addiction isn't easy either -- much like how quitting synthetic drugs requires significant effort and time away from them before normalcy can return.
 
-And it will take a significant amount of time before you can get the dopamine from normal activities, from everyday life. 
-The way to quit is to immerse yourself in another hobby or practice meditation or yoga instead of watching digital videos.
-Meditation and yoga allow you to block out external stimuli and observe the impulse to act from within.
-They restore mental balance and restore the body's rhythm, making digital addicts self-regenerating.
-The digital stimuli in the world are getting stronger and more intense. 
-If we don't protect ourselves from these stimuli, we can end up behaving like zombies, like the addicts on the streets of Kensington.
+To combat this addiction effectively requires immersing oneself in different hobbies or practices such as meditation or yoga instead of succumbing back into consuming rapid-fire digital content. These activities help restore mental balance by blocking external stimuli allowing one's internal rhytms regain control over impulses thus facilitating self-regeneration whitin 'digital addicts'.
+
+As technology advances further intensifying its grip on our attention spans it becomes ever more critical protect ourselves against becoming unwitting victims wandering aimlessly through life much like those 'zombies' found on Kensington streets.
