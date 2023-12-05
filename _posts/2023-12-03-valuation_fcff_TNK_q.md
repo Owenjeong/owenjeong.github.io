@@ -12,26 +12,30 @@ author_profile: false
 
 **[Info]** [**DCF modeling guideline**]({{site.url}}/analysis/valuation_fcff/)
 {: .notice--info}
-*The detail of the calculations will be skipped, all explaination is in the AAPL DCF modeling.* 
+*The detail of the calculations will be skipped, all explaination is in the AAPL DCF modeling.😊* 
 
 ### DCF Modeling
 
-1. Pull out quarter financial statments
+1. Pull out quarter financial statments<br>
 
-```python
+**Quarter Balance Sheet**
+
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 import yfinance as yf
 import pandas as pd
 import datetime
-
 
 ticker = yf.Ticker("TNK")
 # - income statement
 # pd.set_option('display.max_rows', None)
 balance_sheet_df = ticker.quarterly_balance_sheet
 balance_sheet_df
-```
+{% endhighlight %}
 
-
+</details>
 
 
 <div>
@@ -552,15 +556,18 @@ balance_sheet_df
 </table>
 </div>
 
+<br>
 
+**Quarter Cash Flow**
+<details>
+<summary>Show hidden code</summary>
 
-
-```python
+{% highlight python %}
 cash_flow_df = ticker.quarterly_cashflow
 cash_flow_df
-```
+{% endhighlight %}
 
-
+</details>
 
 
 <div>
@@ -890,14 +897,18 @@ cash_flow_df
 </div>
 
 
+<br>
 
+**Quarter Income Statement**
+<details>
+<summary>Show hidden code</summary>
 
-```python
+{% highlight python %}
 income_statement_df = ticker.quarterly_income_stmt
 income_statement_df
-```
+{% endhighlight %}
 
-
+</details>
 
 
 <div>
@@ -1322,19 +1333,18 @@ income_statement_df
 </table>
 </div>
 
+<br>
 
+**Annual Income Statement**
+<details>
+<summary>Show hidden code</summary>
 
-
-```python
-
-```
-
-
-```python
+{% highlight python %}
 annual_income = ticker.income_stmt
 annual_income
-```
+{% endhighlight %}
 
+</details>
 
 
 
@@ -1710,15 +1720,18 @@ annual_income
 </table>
 </div>
 
+<br>
 
+**Annual Cash Flow**
+<details>
+<summary>Show hidden code</summary>
 
-
-```python
+{% highlight python %}
 annual_cash_flow = ticker.cashflow
 annual_cash_flow
-```
+{% endhighlight %}
 
-
+</details>
 
 
 <div>
@@ -2121,15 +2134,19 @@ annual_cash_flow
 </table>
 </div>
 
+<br>
 
+**Annual Balance Sheet**
+<details>
+<summary>Show hidden code</summary>
 
-
-```python
+{% highlight python %}
 annual_balance_sheet = ticker.balance_sheet
 annual_balance_sheet = annual_balance_sheet.fillna(0)
 annual_balance_sheet
-```
+{% endhighlight %}
 
+</details>
 
 
 
@@ -2616,7 +2633,10 @@ annual_balance_sheet
 
 - **FCFF Calculation**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # FCFF Calculation using Cash Flow Statement and Income Statement Inputs
 free_cash_flow_firm = (cash_flow_df.loc['Free Cash Flow'].astype(int)) \
                     + (income_statement_df.loc['Interest Expense'].astype(int) \
@@ -2626,15 +2646,21 @@ free_cash_flow_firm = (cash_flow_df.loc['Free Cash Flow'].astype(int)) \
 # Change Series to a Pandas Dataframe
 free_cash_flow_firm_df = free_cash_flow_firm.to_frame().transpose()
 print(free_cashflow_firm_df)
-```
+{% endhighlight %}
+
+</details>
 
        2023-09-30  2023-06-30  2023-03-31  2022-12-31  2022-09-30
     0   126875503   206239986   177945862   150780886    51081679
 
-    
+<br>
 
+- **FCFF CAGR**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # CAGR of FCFF
 latest_free_cash_flow_firm = float(free_cash_flow_firm_df.iloc[0,0])
 earliest_free_cash_flow_firm = float(free_cash_flow_firm_df.iloc[0,len(free_cash_flow_firm_df.columns)-1])
@@ -2642,28 +2668,35 @@ free_cash_flow_firm_CAGR = ((latest_free_cash_flow_firm/earliest_free_cash_flow_
                             **(float(1/(len(free_cash_flow_firm_df.columns)))))-1
 
 print(free_cash_flow_firm_CAGR)
+{% endhighlight %}
 
-```
+</details>
+
 
     FCFF CAGR: 0.19956151126544364
     
----
+<br>
 - **Long term growth rate**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 long_term_growth = free_cash_flow_firm_CAGR / 6
 long_term_growth
-```
+{% endhighlight %}
 
-
-
+</details>
 
     Long Term Growth Rate: 0.03326025187757394
 
----
+<br>
 - **Forecast FCFF with 5 quarters**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # Forecasted FCFF
 forecast_free_cash_flow_firm_df = pd.DataFrame(columns=['Year ' + str(i) for i in range(1,6)])
 free_cash_flow_firm_forecast_lst = []
@@ -2676,9 +2709,9 @@ for i in range(1,6):
     free_cash_flow_firm_forecast_lst.append(int(free_cash_flow_firm_forecast))
 forecast_free_cash_flow_firm_df.loc[0] = free_cash_flow_firm_forecast_lst
 forecast_free_cash_flow_firm_df
-```
+{% endhighlight %}
 
-
+</details>
 
 
 <div>
@@ -2719,10 +2752,13 @@ forecast_free_cash_flow_firm_df
 </table>
 </div>
 
----
+<br>
 - **Risk-Free Rate**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # Risk-free Rate
 timespan = 100
 current_date = datetime.date.today()
@@ -2733,27 +2769,27 @@ tk = yf.Ticker('^TNX')
 risk_free_rate_df = tk.history(period='3mo')
 risk_free_rate = (risk_free_rate_df.iloc[len(risk_free_rate_df)-1,3])/100
 risk_free_rate
+{% endhighlight %}
 
-```
-
-
-
+</details>
 
     Risk-Free Rate: 0.0422599983215332
 
 
----
+<br>
 - **Fundament stats**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 from finvizfinance.quote import finvizfinance
 ticker2 = finvizfinance('TNK')
 tk = ticker2.ticker_fundament()
 tk
-```
+{% endhighlight %}
 
-
-
+</details>
 
     {'Company': 'Teekay Tankers Ltd',
      'Section': 'Energy',
@@ -2836,54 +2872,63 @@ tk
      'Change': '2.21%'}
 
 
----
+<br>
 - **Beta**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 beta = float(tk['Beta']) # float is for decimal and int is for integer
 beta
-```
+{% endhighlight %}
 
-
+</details>
 
 
     Beta: -0.08
 
 
+<br>
+- **Market Rick Premium**
 
+<details>
+<summary>Show hidden code</summary>
 
-```python
+{% highlight python %}
 market_risk_premium = (0.10-risk_free_rate)
 market_risk_premium
-```
+{% endhighlight %}
 
-
-
+</details>
 
     0.0577400016784668
 
 
----
+<br>
 - **Cost of Equity**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # Required Cost of Equity
-
 coe = risk_free_rate + (beta*market_risk_premium)
-
 coe
-```
+{% endhighlight %}
 
-
-
+</details>
 
     Cost of Equity: 0.03764079818725586
 
 
----
+<br>
 - **Cost of Debt**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 interest_expense = income_statement_df.loc['Interest Expense']
 interest_expense_df = interest_expense.to_frame().transpose()
 interest_expense_str = interest_expense_df.values[0][0]
@@ -2900,32 +2945,39 @@ total_debt_int = int(total_debt_str)
 cod = interest_expense_int / total_debt_int
 
 print(cod)
-```
+{% endhighlight %}
 
+</details>
 
     Cost of Debt: 0.027837333148903798
     
----
+<br>
 - **Effective Tax Rate**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # Effective Tax Rate
 effective_tax_rate = income_statement_df.loc['Tax Provision'].astype(int) \
                            / income_statement_df.loc['Pretax Income'].astype(int)
 
 avg_effective_tax_rate = sum(effective_tax_rate) / len(effective_tax_rate)
 avg_effective_tax_rate
-```
+{% endhighlight %}
 
-
+</details>
 
     Average Effective Tax Rate: 0.01132463897412178
 
 
----
+<br>
 - **Market Cap**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 market_cap_str = tk['Market Cap']
 
 market_cap_lst = market_cap_str.split('.')
@@ -2939,18 +2991,20 @@ if market_cap_str[len(market_cap_str)-1] == 'B':
     market_cap_int = int(''.join(market_cap_lst))
 
 market_cap_int
-```
+{% endhighlight %}
 
-
-
+</details>
 
     Market Cap: 1730000000
 
 
----
+<br>
 - **Enterprise Value**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 last_cf = cash_flow_df.loc['End Cash Position']
 last_cf_df = last_cf.to_frame().transpose()
 last_cf_str = last_cf_df.values[0][-1]
@@ -2965,31 +3019,37 @@ last_equity_int = int(last_equity_str)
 enterprise_value = market_cap_int + total_debt_int - last_cf_int
 
 print(enterprise_value)
+{% endhighlight %}
 
-```
+</details>
 
     EV: 1877471000
     
----
+<br>
 - **WACC Calculation**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 WACC = ((last_equity_int/(last_equity_int + total_debt_int)) * coe) \
         + ((total_debt_int/(last_equity_int + total_debt_int)) * cod * (1-avg_effective_tax_rate))
 
 WACC
-```
+{% endhighlight %}
 
-
-
+</details>
 
     WACC: 0.03561235594017095
 
 
----
+<br>
 - **Calculation of Terminal Value, PV and Firm Value.**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # Equity Value Calculation
 discounted_FCFF_lst = []
 for year in range(0,5):
@@ -3001,16 +3061,20 @@ firm_value = sum(discounted_FCFF_lst)+PV_terminal_value
 equity_value = (firm_value - total_debt_int + last_cf_int) / 10
 
 print(equity_value)
-```
+{% endhighlight %}
 
+</details>
 
     Firm Value: 9748330114.8
     
 
----
+<br>
 - **Shares Outstanding**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # Total Shares Outstanding
 shares_outstanding_str = tk['Shs Outstand']
 
@@ -3029,18 +3093,20 @@ if shares_outstanding_str[len(shares_outstanding_str)-1] == 'M':
     shares_outstanding_int = int(''.join(shares_outstanding_lst))
 
 shares_outstanding_int
-```
+{% endhighlight %}
 
-
-
+</details>
 
     Shares Outstanding: 29300000
 
 
----
+<br>
 - **Model Price and Actual Price Comparison**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # Two-stage FCFF Valuation Model Stock Price Estimate
 stock_price = equity_value / shares_outstanding_int
 stock_price = '${:,.2f}'.format(stock_price)
@@ -3050,14 +3116,16 @@ print("Model Stock Price = %s"%(stock_price))
 actual_stock_price = market_cap_int / shares_outstanding_int
 actual_stock_price = '${:,.2f}'.format(actual_stock_price)
 print("Actual Stock Price = %s"%(actual_stock_price))
-```
+{% endhighlight %}
+
+</details>
 
     Model Stock Price = $332.71
     Actual Stock Price = $59.04
 
-*This company is undervalued*
+*This company is undervalued through DCF Modeling*
 
-
+---
 
 ### Buffet Metrics
 - **Warren Buffet's metrics**
@@ -3075,7 +3143,12 @@ print("Actual Stock Price = %s"%(actual_stock_price))
 
 ---
 
-```python
+- **2022 Analysis**
+
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # 2022y only
 print('2022y Analaysis')
 
@@ -3141,8 +3214,9 @@ if ie > 0.15:
     print(f'Earnings per Share (EPS): {ie}')
 else:
     print('EPS is not enough for the company')
+{% endhighlight %}
 
-```
+</details>
 
     2022y Analaysis
     1. Interest Expense/Operating Income: 0.14360161200242685
@@ -3157,9 +3231,14 @@ else:
     
 *Only two metrics are not good enough for 2022y*
 
----
+<br>
 
-```python
+- **2019 - 2022 Analysis**
+
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # 2019 - 2022 
 print('2019y-2022y Analysis')
 
@@ -3234,7 +3313,9 @@ if ie > 0.15:
     print(f'Earnings per Share (EPS): {ie}')
 else:
     print(f'EPS is not enough for the company: {ie}')
-```
+{% endhighlight %}
+
+</details>
 
     2019y-2022y Analysis
     Interest Expense is too high relative to Operating Income: 0.15991957466416531
@@ -3249,9 +3330,14 @@ else:
     
 *2019y to 2022y are not good enough for Buffet's metrics. This company is profitable after Covid and Crude oil is cheaper*
 
----
+<br>
 
-```python
+- **3Q 2023 Analysis**
+
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 # 09-30-23
 print('3Q-23 Analysis')
 
@@ -3322,7 +3408,9 @@ if ie > 0.15:
 else:
     print(f'Net Income is not enough relative to Stockholders equity: {ie}')
 
-```
+{% endhighlight %}
+
+</details>
 
     3Q-23 Analysis
     Interest Expense/Operating Income: 0.07894575543977934
@@ -3341,22 +3429,21 @@ else:
 ### Correlation
 **Correlation between TNK, Crude Oil and S&P500**
 
----
+<br>
 - **TNK price history** 
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 price = ticker.history(
     start = '2018-01-01',
     end = '2023-12-02',
     interval = '1d',
     )['Close']
+{% endhighlight %}
 
-
-price
-```
-
-
-
+</details>
 
     Date
     2018-01-02 00:00:00-05:00    10.383956
@@ -3391,34 +3478,23 @@ price
     Name: Close, dtype: float64
 
 
----
+<br>
 - **Crude oil price history**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 wti = yf.Ticker('CL=F')
-
-```
-
-
-
-
-    yfinance.Ticker object <CL=F>
-
-
-
-
-```python
 price_wti = wti.history(
     start = '2018-01-01',
     end = '2023-12-02',
     interval= '1d',
 )['Close']
-
 price_wti
-```
+{% endhighlight %}
 
-
-
+</details>
 
     Date
     2018-01-02 00:00:00-05:00     60.369999
@@ -3454,10 +3530,13 @@ price_wti
     Name: Close, dtype: float64
 
 
----
+<br>
 - **S&P500 price history**
 
-```python
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 snp = yf.Ticker('^GSPC')
 price_snp = snp.history(
         start = '2018-01-01',
@@ -3466,9 +3545,9 @@ price_snp = snp.history(
 )['Close']
 
 price_snp
-```
+{% endhighlight %}
 
-
+</details>
 
 
     Date
@@ -3507,44 +3586,39 @@ price_snp
 - **Price chart between TNK and Crude oil**
 *They are the opposite, if crude oil is up, TNK is going dowm vice versa*
 
-```python
-import matplotlib.pyplot as plt
+<details>
+<summary>Show hidden code</summary>
 
-fig, ax = plt.subplots(figsize=(12,8))
+{% highlight python %}
+snp = yf.Ticker('^GSPC')
+price_snp = snp.history(
+        start = '2018-01-01',
+    end = '2023-12-02',
+    interval= '1d',
+)['Close']
 
-l1 = ax.plot(price, color='blue', label='TNK')
-ax.set_title('TNK & Crude Oil')
-ax.set_xlabel('Date')
+price_snp
+{% endhighlight %}
 
-ax1 = ax.twinx()
-l2 = ax1.plot(price_wti, color='green', label='Crude Oil')
+</details>
 
-# ax2 = ax1.twinx()
-# l3 = ax2.plot(price_snp, color='red', label='S&P')
-
-ax.grid
-ax.legend(handles=l1+l2, loc=2)
-plt.show()
-```
-
-
-    
 ![image]({{site.url}}/assets/images/tnk/output1.png)
     
+<br>
+- **Price merged**
+<details>
+<summary>Show hidden code</summary>
 
----
-
-```python
+{% highlight python %}
 price_df = pd.DataFrame()
 
 price_df['TNK'] = price
 price_df['WTI'] = price_wti
 price_df['SNP'] = price_snp
 price_df.head()
-```
+{% endhighlight %}
 
-
-
+</details>
 
 <div>
 <style scoped>
@@ -3613,13 +3687,17 @@ price_df.head()
 ---
 - **Returns during the term**
 
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 ```python
 returns = (price_df.pct_change()+1).product()-1
 returns
 ```
+{% endhighlight %}
 
-
-
+</details>
 
     TNK    3.891200
     WTI    0.226934
@@ -3630,13 +3708,18 @@ returns
 ---
 - **Calculation correlation**
 
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 ```python
 changes = price_df.pct_change()
 corr = changes.corr()
 corr.head()
 ```
+{% endhighlight %}
 
-
+</details>
 
 
 <div>
@@ -3685,9 +3768,13 @@ corr.head()
 </table>
 </div>
 
----
+<br>
 - **Show hotmap with correlation**
 
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 ```python
 plt.figure(figsize=(16,8))
 plt.grid(False)
@@ -3697,9 +3784,11 @@ plt.xticks(range(len(corr)), corr.columns, rotation=90)
 plt.yticks(range(len(corr)), corr.columns)
 plt.show()
 ```
+{% endhighlight %}
 
+</details>
 
-    
+   
 ![image]({{site.url}}/assets/images/tnk/output2.png)
     
 
@@ -3709,6 +3798,10 @@ Crude oil and TNK is inversed. if oil price is dropped, TNK price is up.
 ---
 - **Risk & Return**
 
+<details>
+<summary>Show hidden code</summary>
+
+{% highlight python %}
 ```python
 plt.figure(figsize=(16,8))
 plt.scatter(changes.std(), changes.mean())
@@ -3723,8 +3816,9 @@ for label, x, y in zip(changes.columns, changes.std(), changes.mean()):
     bbox = dict(boxstyle = 'round,pad=0.5', fc = 'green', alpha = 0.5),
     arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3, rad=0'))  
 ```
+{% endhighlight %}
 
-
+</details>
     
 ![image]({{site.url}}/assets/images/tnk/output3.png)
 
