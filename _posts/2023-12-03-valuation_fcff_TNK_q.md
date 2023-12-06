@@ -3832,5 +3832,9 @@ for label, x, y in zip(changes.columns, changes.std(), changes.mean()):
 
 ---
 ### **Conclusion**
+![image]({{site.url}}/assets/images/tnk/output5.png)
+![image]({{site.url}}/assets/images/tnk/output6.png)
 
-![image]({{site.url}}/assets/images/tnk/output4.png)
+<br>
+- Quantitative Analysis
+<embed src="{{site.url}}/assets/images/tnk/Tearsheet.pdf" type="application/pdf"> 
