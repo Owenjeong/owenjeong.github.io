@@ -3584,7 +3584,6 @@ price_snp
 
 ---
 - **Price chart between TNK and Crude oil**
-*They are the opposite, if crude oil is up, TNK is going dowm vice versa*
 
 <details>
 <summary>Show hidden code</summary>
