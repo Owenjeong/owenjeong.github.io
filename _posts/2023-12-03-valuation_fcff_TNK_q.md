@@ -3590,14 +3590,23 @@ price_snp
 <summary>Show hidden code</summary>
 
 {% highlight python %}
-snp = yf.Ticker('^GSPC')
-price_snp = snp.history(
-        start = '2018-01-01',
-    end = '2023-12-02',
-    interval= '1d',
-)['Close']
+import matplotlib.pyplot as plt
 
-price_snp
+fig, ax = plt.subplots(figsize=(12,8))
+
+l1 = ax.plot(price, color='blue', label='TNK')
+ax.set_title('TNK & Crude Oil')
+ax.set_xlabel('Date')
+
+ax1 = ax.twinx()
+l2 = ax1.plot(price_wti, color='green', label='Crude Oil')
+
+# ax2 = ax1.twinx()
+# l3 = ax2.plot(price_snp, color='red', label='S&P')
+
+ax.grid
+ax.legend(handles=l1+l2, loc=2)
+plt.show()
 {% endhighlight %}
 
 </details>
