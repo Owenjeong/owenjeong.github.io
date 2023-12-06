@@ -3823,4 +3823,119 @@ for label, x, y in zip(changes.columns, changes.std(), changes.mean()):
 ![image]({{site.url}}/assets/images/tnk/output3.png)
 
 ---
+### **Conclusion**
 
+<details>
+<summary>Show hidden code</summary>
+{% highlight python %}
+import matplotlib.lines as lines
+
+background_color = "#fafafa"
+
+
+# Custom colour map based on Netflix palette
+cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", ['#221f1f', '#b20710','#f5f5f1'])
+
+
+fig = plt.figure(figsize=(10, 8), dpi=150,facecolor=background_color)
+gs = fig.add_gridspec(2, 3)
+gs.update(wspace=0.11, hspace=0.5)
+ax0 = fig.add_subplot(gs[0, :])
+ax0.set_facecolor(background_color)
+
+sns.lineplot(data=price,color='#0f4c81',ax=ax0, label='TNK', legend=False)
+
+
+ax0.tick_params(axis='both', which='major', labelsize=8)
+ax0.tick_params(axis=u'both', which=u'both',length=0)
+
+
+ax1 = ax0.twinx()
+sns.lineplot(data=price_wti,color='#b20710', ax=ax1, label='Crude Oil', legend=False)
+fig.text(0.15, 0.89, 'TNK & Crude Oil Comparison', fontsize=18,fontfamily='serif',fontweight='bold')
+fig.text(0.15,0.84,'They are inversely related;\nas one price increases, the other decreases.',fontsize=11,fontfamily='serif')
+l1 = ax0.get_legend_handles_labels()
+l2 = ax1.get_legend_handles_labels()
+ax0.legend(handles=l1[0]+l2[0], labels=l1[1]+l2[1], loc='lower right')
+
+
+
+l1 = lines.Line2D([0.5, 0.5], [0.05, 0.45], transform=fig.transFigure, figure=fig,color='black',lw=.2)
+fig.lines.extend([l1])
+
+
+
+
+ax2 = fig.add_subplot(gs[1,:1])
+mask = np.zeros_like(corr_price, dtype=np.bool)
+mask[np.triu_indices_from(mask)] = True
+# fig, ax = plt.subplots(figsize=(10, 7))
+fig.text(.15,.43,'Price Correlation', fontfamily='serif',fontweight='bold',fontsize=15)
+# fig.text(.75,.73,
+#         '''
+#         Crude oil and TNK is inversed.
+#         if oil price is dropped, TNK price is up.
+
+#          ''', fontfamily='serif',fontsize=12,ha='right')
+pl = sns.heatmap(corr_price, mask=mask, cmap=cmap, vmax=.3, vmin=-.3, center=0, square=True, linewidths=.1)
+
+
+ax3 = fig.add_subplot(gs[1,2])
+ax3.scatter(changes.std(), changes.mean(), zorder=3, color='#0f4c81')
+fig.text(0.65, 0.43, 'Risk & Return', fontsize=14, fontweight='bold', fontfamily='serif') #color="#323232"
+plt.xlabel('Risk')
+plt.ylabel('Return')
+plt.xlim()
+plt.ylim()
+# fig.text(.60,.80,'Risk & Return', fontfamily='serif',fontweight='bold',fontsize=20)
+# fig.text(.75,.68,
+#         '''
+#         Crude oil and TNK is inversed.
+#         if oil price is dropped, TNK price is up.
+
+#             ''', fontfamily='serif',fontsize=12,ha='right')
+for label, x, y in zip(changes.columns, changes.std(), changes.mean()):
+    ax3.annotate(label, xy=(x, y), xytext=(30, -30),
+    textcoords = 'offset points',
+    ha = 'right', va = 'bottom',
+    bbox = dict(boxstyle = 'round,pad=0.5', fc = 'gray', alpha = 0.5),
+    arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3, rad=0'))  
+
+# l3 = lines.Line2D([0, 1], [0.5, 0.5], transform=fig.transFigure, figure=fig,color='black',lw=0.2)
+# fig.lines.extend([l3])
+
+
+fig.text(0.15, -0.10
+         , 'Insight', fontsize=18, fontweight='bold', fontfamily='serif',color='#323232')
+
+fig.text(0.15, -0.58
+         , '''
+There is a distinct inverse relationship between TNK and crude oil prices. 
+
+This refers to the phenomenon where the increase in one price leads to the decrease in 
+
+the other. Such a relationship reflects the complex dynamics of the global energy market and
+
+particularly aids in understanding how TNK is impacted by fluctuations in oil prices.
+
+And historical data show that TNK has demonstrated higher returns than the S&P 500.
+
+
+
+In conclusion, the inverse relationship between TNK and oil prices elevates 
+
+the volatility of TNK but also enables higher returns. These characteristics make TNK
+
+a high-risk, high-return investment option.
+
+'''       
+         , fontsize=12, fontweight='light', fontfamily='serif',color='#323232')
+
+
+plt.show()
+
+{% endhighlight %}
+
+</details>
+    
+![image]({{site.url}}/assets/images/tnk/output4.png)
