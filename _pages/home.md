@@ -13,8 +13,8 @@ header:
 #       url: "http://google.com"
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "Economy, Programming and Thought"
-intro:
-  - excerpt: '# Reflections and Research: A Deep Dive into My Studies and Thoughts'
+# intro:
+#   - excerpt: '# Reflections and Research: A Deep Dive into My Studies and Thoughts'
 feature_row:
   - image_path: assets/images/feat1.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
