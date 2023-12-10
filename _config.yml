@@ -104,8 +104,8 @@ analytics:
 
 # Site Author
 author:
-  name             : Owen Jeong
-  avatar           : /assets/images/profile/profile2.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : "Owen Jeong"
+  avatar           : "/assets/images/profile/profile2.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Analyst + Programming"
   location         : "Chicago, IL USA"
   email            :
@@ -119,7 +119,7 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Owenjeong"
-    - label: "Instagram"
+    # - label: "Instagram"
       # icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
