@@ -11,7 +11,7 @@ author_profile: false
 # Stock Valuation using Free Cash Flow to the Firm with Python
 
 
-For this analysis, we use several Python-based scientific computing technologies along with the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) and the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints).
+For this analysis, we use several Python-based scientific computing technologies along with the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) and the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints). Visit Jupyter Notebooks detailing this analysis are also available on [Google Colab](https://colab.research.google.com/drive/1BWmRIDtZGRndLk8lLGgpoURaAzHC8_jg?usp=sharing) and [Github](https://github.com/AlphaWaveData/Jupyter-Notebooks/blob/master/AlphaWave%20Stock%20Valuation%20using%20Free%20Cash%20Flow%20to%20the%20Firm%20example.ipynb).
 
 
 ```python
