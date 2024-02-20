@@ -11,7 +11,7 @@ author_profile: false
 # Stock Valuation using Free Cash Flow to the Firm with Python
 
 
-For this analysis, we use several Python-based scientific computing technologies along with the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) and the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints).  Jupyter Notebooks detailing this analysis are also available on [Google Colab](https://colab.research.google.com/drive/1BWmRIDtZGRndLk8lLGgpoURaAzHC8_jg?usp=sharing) and [Github](https://github.com/AlphaWaveData/Jupyter-Notebooks/blob/master/AlphaWave%20Stock%20Valuation%20using%20Free%20Cash%20Flow%20to%20the%20Firm%20example.ipynb).
+For this analysis, we use several Python-based scientific computing technologies along with the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) and the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints).
 
 
 ```python
@@ -70,10 +70,7 @@ We will show how to obtain each component of the two-stage FCFF valuation model,
 
 To calculate the FCFF growth rate, we take the compound annual growth rate (CAGR) of FCFF over the past three years.  This FCFF growth rate is then used to generate FCFF forecasts for each of the next 5 years, which is Stage 1 in our model. For the constant expected growth rate that will be applied to Stage 2, we divide the CAGR of FCFF by two in order to estimate the long-term growth rate of FCFF in perpetuity.
 
-In order to calculate the FCFF growth rate and long-term growth rate, we must first acquire the FCFF from the company's financial statements.  Using the [Cash Flow Statement](https://rapidapi.com/alphawave/api/financial-statements?endpoint=apiendpoint_1cf7a51e-32f9-41a5-901a-fa4f66ba9807) and [Income Statement](https://rapidapi.com/alphawave/api/financial-statements?endpoint=apiendpoint_b4be9cff-500e-4b0a-a5a9-a8d73f9cde7a) endpoints from the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints), we can access the data needed to calculate FCFF.
-
-To call these APIs with Python, you can choose one of the supported Python code snippets provided in the API console. The following are examples of how to invoke the APIs with Python Requests. You will need to insert your own x-rapidapi-host and x-rapidapi-key information in the code blocks below.
-
+In order to calculate the FCFF growth rate and long-term growth rate, we must first acquire the FCFF from the company's financial statements.  
 
 ```python
 url = "https://financial-statements.p.rapidapi.com/api/v1/resources/cash-flow"
@@ -599,7 +596,7 @@ $$r_e$$ = required return on equity\
 $$r_d$$ = required return on debt\
 $$tax\ rate$$ = effective tax rate
 
-Adding the [Balance Sheet Statement](https://rapidapi.com/alphawave/api/financial-statements?endpoint=apiendpoint_df251606-fb96-4468-9067-0d65886ce5b9) endpoint from the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) and the [Key Statistics](https://rapidapi.com/alphawave/api/stock-analysis?endpoint=apiendpoint_dff4b882-4be4-4169-a700-04275c92bdce) endpoint from the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints), we can pull in the remaining data required to calculate WACC.
+We can pull in the remaining data required to calculate WACC from API.
 
 To call these APIs with Python, you can choose one of the supported Python code snippets provided in the API console. The following are examples of how to invoke the APIs with Python Requests. You will need to insert your own x-rapidapi-host and x-rapidapi-key information in the code blocks below.
 
@@ -1069,7 +1066,7 @@ risk_free_rate
 
 
 *Estimating the Stock's Beta*<br>
-A stock's beta is the sensitivity of that stock's return to the return of the market index.  It is a measure of systematic risk and can be obtained using the [Key Statistics](https://rapidapi.com/alphawave/api/stock-analysis?endpoint=apiendpoint_dff4b882-4be4-4169-a700-04275c92bdce) endpoint from the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints) using the code below.
+A stock's beta is the sensitivity of that stock's return to the return of the market index.
 
 
 ```python
@@ -1121,11 +1118,9 @@ coe
 
 
 **2b. Estimating the Required Return on Debt**<br>
-Firms have a cost of debt, which is the interest rate a company pays on its debt, such as bonds and loans. From the lender's perspective, this rate is the required return on debt. To calculate the required return on debt, we use the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) to pull the firm's Interest Expense from the [Income Statement](https://rapidapi.com/alphawave/api/financial-statements?endpoint=apiendpoint_b4be9cff-500e-4b0a-a5a9-a8d73f9cde7a) endpoint and Total Debt from the [Balance Sheet Statement](https://rapidapi.com/alphawave/api/financial-statements?endpoint=apiendpoint_df251606-fb96-4468-9067-0d65886ce5b9) endpoint.
+Firms have a cost of debt, which is the interest rate a company pays on its debt, such as bonds and loans. From the lender's perspective, this rate is the required return on debt. 
 
 After dividing Interest Expense by Total Debt to calculate the required rate of return on debt, we will multiply this rate by (1 - effective tax rate) as seen in the WACC formula in order to get the after-tax required return on debt.  The reason for this is because there are tax deductions available on interest paid, which are often to the firm's benefit. As a result, the net cost of a company's debt is the amount of interest the firm is paying minus the amount it has saved in taxes because of its tax-deductible interest payments.
-
-Using the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints), we can calculate the effective tax rate by taking the average of the Tax Provision values returned through the [Income Statement](https://rapidapi.com/alphawave/api/financial-statements?endpoint=apiendpoint_b4be9cff-500e-4b0a-a5a9-a8d73f9cde7a) endpoint.
 
 The code below gives a good approximation for the required rate of return on debt and the effective tax rate that will be used in the WACC calculation.
 
@@ -1174,7 +1169,6 @@ avg_effective_tax_rate
 **2c. Estimating the Capital Structure**<br>
 The final inputs for calculating WACC deal with the firm's capital structure, which is a company's mix of equity and debt.  As previously noted, WACC is a blend of a company’s equity and debt cost of capital based on the company's equity and debt capital ratio.
 
-To calculate the market value of equity for a firm, we can use the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints) to pull the firm's Market Cap from the [Key Statistics](https://rapidapi.com/alphawave/api/stock-analysis?endpoint=apiendpoint_dff4b882-4be4-4169-a700-04275c92bdce) endpoint.
 
 
 ```python
@@ -1201,8 +1195,7 @@ market_cap_int
 
 
 
-In most cases, you can use the book value of debt from a company’s latest balance sheet as an approximation for market value of debt. Unlike equity, the market value of debt usually does not deviate too far from the book value.  To calculate the market value of debt, we can use the [AlphaWave Data Financial Statements API](https://rapidapi.com/alphawave/api/financial-statements/endpoints) to pull the firm's Net Debt from the [Balance Sheet Statement](https://rapidapi.com/alphawave/api/financial-statements?endpoint=apiendpoint_df251606-fb96-4468-9067-0d65886ce5b9) endpoint.
-
+In most cases, you can use the book value of debt from a company’s latest balance sheet as an approximation for market value of debt. Unlike equity, the market value of debt usually does not deviate too far from the book value.  
 
 ```python
 # Market Value of Debt
@@ -1302,7 +1295,7 @@ equity_value
 
 
 
-The [Key Statistics](https://rapidapi.com/alphawave/api/stock-analysis?endpoint=apiendpoint_dff4b882-4be4-4169-a700-04275c92bdce) endpoint from the [AlphaWave Data Stock Analysis API](https://rapidapi.com/alphawave/api/stock-analysis/endpoints) enables us to pull in the firm's total Shares Outstanding, which we will use to calculate the two-stage FCFF valuation model's stock price estimate for the firm.
+We will use to calculate the two-stage FCFF valuation model's stock price estimate for the firm.
 
 
 ```python
