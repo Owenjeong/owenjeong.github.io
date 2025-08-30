@@ -53,7 +53,7 @@ One feature I love is that I can send a command through discord to my database, 
 ### *5. Performance (3 months)*
 Here's a three-month snapshot, early results were strong (peaking over 15% of return). After the market pullback I gave back some gains, but the portfolio still remains profit as it shows. The KPI dashboard are built with Apache Superset. 
 
-![image]({{site.url}}/assets/images/algo_dashboard/algorithmic_trading_dashboard.png/)
+![image]({{site.url}}/assets/images/algo_dashboard/algorithmic-trading-performance.jpg/)
 
 
 ### *6. Conclusion*
