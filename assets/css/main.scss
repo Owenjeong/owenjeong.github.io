@@ -7,3 +7,129 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* ==========================================================================
+   Hamburger Menu (responsive)
+   ========================================================================== */
+
+// Hamburger toggle button — hidden on wide screens, visible on narrow
+.hamburger-toggle {
+  display: none; // hidden by default (desktop)
+  align-self: center;
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+  z-index: 30;
+
+  .hamburger-icon,
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    display: block;
+    width: 1.5rem;
+    height: 0.2rem;
+    background: $primary-color;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger-icon {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -0.45rem;
+    }
+
+    &::after {
+      top: 0.45rem;
+    }
+  }
+
+  // Animate to X when open
+  &.is-active .hamburger-icon {
+    background: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Responsive: show hamburger & collapse menu on narrow screens
+@media (max-width: 768px) {
+  .hamburger-toggle {
+    display: block;
+  }
+
+  .greedy-nav .visible-links {
+    // Collapsed state (default)
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    width: 160px;
+    background: $background-color;
+    border: 1px solid $border-color;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 25;
+    padding: 0.5em 0;
+    overflow: hidden;
+
+    // Open state
+    &.is-open {
+      display: flex;
+    }
+
+    li {
+      flex: none;
+
+      a {
+        padding: 0.6em 1.2em;
+        margin: 0;
+        display: block;
+      }
+    }
+
+    // Show dropdown inline within mobile menu
+    .has-dropdown .dropdown {
+      position: static;
+      width: auto;
+      box-shadow: none;
+      border: none;
+      border-top: 1px solid $border-color;
+      padding-left: 0;
+      margin: 0;
+
+      li {
+        width: auto;
+        border: none;
+      }
+
+      li a {
+        font-size: 0.85em;
+        padding: 0.5em 1.2em 0.5em 2em;
+        height: auto;
+        line-height: normal;
+      }
+    }
+  }
+}

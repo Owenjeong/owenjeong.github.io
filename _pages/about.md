@@ -20,7 +20,7 @@ author_profile: True
 
 ## 📔 Hello! Welcome to my note 
 
-Greeting! I am Owen Jeong(Seungwon Jeong), a professional specializing in the field of financial analysis and programming. My focus is on exploring innovative ways to amalgamate the domains of finance and programming.
+Hey there! I'm Seungwon (Owen) Jeong. I work at the intersection of finance and programming, always looking for better ways to bring the two together.
 
 ---
 
@@ -30,21 +30,21 @@ Greeting! I am Owen Jeong(Seungwon Jeong), a professional specializing in the fi
 
 ## 💼 Experiences
 
-✔️ Utilized advanced financial modeling techniques in Excel, Python and SQL to predict future revenues, costs, and cash flows.
+✔️ Built financial models in Excel, Python, and SQL to forecast revenues, costs, and cash flows.
 
-✔️ Contributed to buy-side acquisition suggestions after evaluating companies considered for purchase.
+✔️ Evaluated acquisition targets and put together buy-side recommendations.
 
-✔️ Conducted comprehensive research and analysis on company and industry financial and operating information, informing entities' investment strategies and decisions.
+✔️ Dug into company and industry financials to help shape investment strategies and decisions.
 
-✔️ Created statistical exhibits and conducted financial performance trend analysis for client presentations
+✔️ Put together statistical exhibits and financial trend analyses for client presentations.
 
-✔️ Integrated information from multiple sources to enable more efficient processes, enhanced analysis, and streamlined reporting.
+✔️ Pulled data from multiple sources to streamline reporting and improve analysis workflows.
 
-✔️ Delivered financial modeling to support strategic recommendations to clients increasing in overall profitability.
+✔️ Delivered financial models that supported strategic recommendations and helped clients grow profitability.
 
-✔️ Developed proficiency in using all required systems and models, including Excel, Python, SQL.
+✔️ Picked up strong skills in Excel, Python, and SQL across a range of projects.
 
-✔️ Led a data visualization team to create comprehensive presentation materials using Tableau, Power BI, improving the understanding of complex financial data and trends among clients.
+✔️ Led a data vizualization team that built presentations in Tableau and Power BI, making complex financial data easier for clients to follow.
 
 
 
