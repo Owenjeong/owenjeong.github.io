@@ -69,5 +69,5 @@ Hey there! I'm Seungwon (Owen) Jeong. I'm an accounting/finance and data profess
 - Accounting Data Analyst
 - Financial Data Analyst
 - Accounting Systems Analyst
-- Financial Sysmtes Analyst
+- Financial Systems Analyst
 
