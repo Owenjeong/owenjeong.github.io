@@ -16,7 +16,7 @@ author_profile: false
 ```
 Contents
 1. Introduction
-2. Ticker Selelction
+2. Ticker Selection
 3. Ticker Database
 4. Discord
 5. Performance
@@ -57,7 +57,7 @@ Here's a three-month snapshot, early results were strong (peaking over 15% of re
 
 
 ### *6. Conclusion*
-Algorithmic trading doesn't mean "good" or "bad", but you can definitely try this thing and see how it works. If you can't monitor markets all day (I have a full time job), a well-tested, rule-based bot can help execute consistenly on your plan without straing at the screen. As always start small, validate with backtests and paper trading, and iterate thoughtfully.
+Algorithmic trading doesn't mean "good" or "bad", but you can definitely try this thing and see how it works. If you can't monitor markets all day (I have a full time job), a well-tested, rule-based bot can help execute consistently on your plan without straing at the screen. As always start small, validate with backtests and paper trading, and iterate thoughtfully.
 
 
 
