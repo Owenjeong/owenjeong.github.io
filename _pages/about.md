@@ -20,29 +20,30 @@ author_profile: True
 
 ## 📔 Hello! Welcome to my note 
 
-Hey there! I'm Seungwon (Owen) Jeong. I'm an accounting/finance and data professional based in Chicago, IL - with 6+ years in accounting and a parallel track buidling real data systems, ML pipelines , and production apps
+Hey there! I'm Seungwon (Owen) Jeong. I'm an accounting/finance and data professional based in Chicago, IL - with 6+ years in accounting and a parallel track building real data systems, ML pipelines , and production apps
 
 ---
 
 ![image]({{site.url}}/assets/images/skillset.png)
 
----
-Out side of that, I build:
 
-- ONWRD - A fitness mobile app I founded, built with Flutter, Python, PostgreSQL, and deployed on AWS/GCP. Features  Apache Superset dashabords for user analytics. [Live on the App store -> [Website](https://www.goonwrd.com)]
+## I build and ship:
 
-- Stock Analysis Dashboard - A ML pipeline combining LSTM/XGBosst ensemble models, FinBERT news/reddit sentiment analysis, DCF valuation, and FRED macroeconomic data. -> [Website](https://wegetstocksinfo.streamlit.app/)
+- ONWRD - A fitness mobile app I founded, built with Flutter, Python, PostgreSQL, and deployed on AWS/GCP. Features  Apache Superset dashboards for user analytics. [Live on the App store -> [Website](https://www.goonwrd.com)]
+
+- Stock Analysis Dashboard - A ML pipeline combining LSTM/XGBoost ensemble models, FinBERT news/reddit sentiment analysis, DCF valuation, and FRED macroeconomic data. -> [Website](https://wegetstocksinfo.streamlit.app/)
 
 
 ## 📰 Technical Stack
 
 |Category |Tools|
 |---------|------|
-|Languages|Pythons, SQL, VBA, Flutter, Dart|
-|BI & Visualization|Power BI, Apache Superset, Tablea|
+|Languages|Python, PostgreSQL, VBA, Flutter, Dart|
+|BI & Visualization|Power BI, Apache Superset, Tableau|
 |Cloud| AWS, GCP|
-|Data, ML| Excel, Pandas, Numpy, LSTM, XGBoost, ETL/ELT Pipelines|
+|Data, ML| Pandas, Numpy, LSTM, XGBoost, ETL/ELT Pipelines|
 |ERP| Quickbooks Desktop & Online(Admin Level)|
+|Spreadsheet|Excel|
 |Other| Streamlit, Financial Modeling, Data Integration|
 
 
@@ -63,6 +64,10 @@ Out side of that, I build:
 
 ✔️ Utilized Python, SQL, VBA and Excel to extract, analyze, and leverage high-volume financial data, enhancing operational efficiency and business intelligence reporting.
 
+## What I'm Looking for
 
-
+- Accounting Data Analyst
+- Financial Data Analyst
+- Accounting Systems Analyst
+- Financial Sysmtes Analyst
 

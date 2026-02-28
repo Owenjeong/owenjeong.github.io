@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Seungwon(Owen) Jeong"
   avatar           : "/assets/images/profile/profile2.JPG" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Analyst + Programming"
+  bio              : "Accounting/Financial Analyst + Programming"
   location         : "Chicago, IL USA"
   email            :
   links:
@@ -119,9 +119,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Owenjeong"
-    # - label: "Instagram"
-      # icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/seungwon-owen-j-3738b1143/"
 
 # Site Footer
 footer:
