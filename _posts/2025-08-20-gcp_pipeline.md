@@ -51,11 +51,11 @@ GCS bucket structure follows a clean partition layout:
 gs://my-data-lake/
   raw/
     source=api_a/
-      dt=2026-02-21/
+      dt=2025-08-20/
         data.json
   staging/
     table_name/
-      dt=2026-02-21/
+      dt=2025-08-20/
         data.parquet
 ```
 
@@ -103,7 +103,7 @@ job_config = bigquery.LoadJobConfig(
     write_disposition=bigquery.WriteDisposition.WRITE_APPEND,
 )
 
-uri = "gs://my-data-lake/raw/source=api_a/dt=2026-02-21/*.json"
+uri = "gs://my-data-lake/raw/source=api_a/dt=2025-08-20/*.json"
 
 load_job = client.load_table_from_uri(
     uri, "my_project.raw_dataset.api_a_events", job_config=job_config

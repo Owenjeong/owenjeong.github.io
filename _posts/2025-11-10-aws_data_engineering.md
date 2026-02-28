@@ -51,11 +51,11 @@ Raw data lands in S3 — could be CSVs, JSON, or Parquet files from APIs, databa
 s3://my-data-lake/
   raw/
     source=api_a/
-      year=2026/month=02/day=21/
+      year=2025/month=11/day=08/
         data.json
   processed/
     table_name/
-      year=2026/month=02/
+      year=2025/month=11/
         part-00000.parquet
 ```
 
@@ -131,7 +131,7 @@ SELECT
     COUNT(*) AS total_events,
     SUM(amount) AS total_amount
 FROM processed_db.clean_table
-WHERE year = '2026' AND month = '02'
+WHERE year = '2025' AND month = '11'
 GROUP BY user_id
 ORDER BY total_amount DESC
 LIMIT 100;
