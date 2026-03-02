@@ -76,9 +76,9 @@ word_stemmer.stem('eating')
 ```python
 import praw
 
-reddit = praw.Reddit(client_id='SpMmWlA9VNMbn-8fbkm2bA',
-                     client_secret='Bqi7WpVLw0qNimGAuVkXofKn1QuQ1g',
-                     user_agent='owenAPI')
+reddit = praw.Reddit(client_id='',
+                     client_secret='',
+                     user_agent='')
 ```
 
 
