@@ -38,7 +38,7 @@ This means the _same workout_ can build you up or break you down, depending enti
 Dive into the eight-chapter data narrative below. Use arrow keys or click through the dots to navigate each chapter — from the science question, through the discovery, to the actionable training plan.
 
 <div style="margin-left:-10rem; margin-right:-10rem;">
-<iframe src="https://datavizswj.netlify.app/" width="100%" height="1000" style="border:none; border-radius:12px;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://datavizswj.netlify.app/" width="100%" height="1200" style="border:none; border-radius:12px;" loading="lazy" allowfullscreen></iframe>
 </div>
 
 ## What This Means for Your Training
