@@ -1,7 +1,7 @@
 ---
 layout: single
 permalink: /labs/lab2
-title: "Revenue by Rails_BI"
+title: "Data Analysis for Recovery & Running Efficiency"
 ---
 
 <style>
@@ -29,7 +29,7 @@ title: "Revenue by Rails_BI"
 <div class="powerbi-fullscreen">
   <iframe width="100%" 
           height="100%" 
-          src="https://app.powerbi.com/reportEmbed?reportId=7e2899b9-0538-4690-b968-af46ff268353&autoAuth=true&ctid=44467e6f-462c-4ea2-823f-7800de5434e3" 
+          src="https://datavizswj.netlify.app/" 
           frameborder="0" 
           allowFullScreen="true">
   </iframe>
