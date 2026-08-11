@@ -13,8 +13,6 @@ main:
         url: "/lab2/"  
   - title: "Search"
     url: /search/
-  - title: "Contact"
-    url: /contact/
   - title: "Terms"
     url: /terms/
 docs:

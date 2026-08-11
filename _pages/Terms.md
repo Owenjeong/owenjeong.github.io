@@ -52,4 +52,4 @@ By using this website, you consent to this Privacy Policy and agree to its terms
 
 ## Contact
 
-If you have any questions about this Privacy Policy, you can reach me through the [Contact](/contact/) page.
+If you have any questions about this Privacy Policy, you can reach me through the [Contact](/about/) page.
