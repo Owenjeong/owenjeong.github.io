@@ -27,7 +27,7 @@ The heart of TractVue is the **Research** map. Instead of a list of listings, it
 
 A few things I focused on:
 
-- **Price change at a glance.** Regions are shaded on a diverging red-to-blue scale. Red means decline, blue means growth, with a neutral midpoint anchored exactly at zero — so red *only ever* means prices fell. No ambiguity.
+- **Price change at a glance.** Regions are shaded on a diverging red-to-blue scale. Red means decline, blue means growth, with a neutral midpoint anchored exactly at zero - so red *only ever* means prices fell. No ambiguity.
 - **Slice the data your way.** Filter by time range (1, 3, 5, 10, or 20 years) and by property type - single family, condo/co-op, top/mid/bottom tier, or by bedroom count (2, 3, 4, 5+ bed).
 - **Zoom from country to ZIP.** At the national level you see states and cities; zoom in and the map switches to ZIP-level (ZCTA) polygons where Zillow publishes them.
 - **Color-blind safe mode.** There's an alternate YlGnBu palette so the map stays readable for deuteranopia, protanopia, and tritanopia.
@@ -119,4 +119,4 @@ The three tabs available today - Research, Calculator, and Contact - are the fou
 
 If you try TractVue and have thoughts, the Contact page is right there. I'd genuinely love to hear what markets you're researching and what would make the tool more useful.
 
-*Thanks for reading — and happy hunting.* 
+*Thanks for reading and happy hunting.* 
